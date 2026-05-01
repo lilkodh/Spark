@@ -1,5 +1,5 @@
 
-export const Challengecard = ({mrDone}) => {
+export const Challengecard = ({mrDone,challenge}) => {
 
     return( 
     
@@ -8,7 +8,7 @@ export const Challengecard = ({mrDone}) => {
   <div className="flex justify-between items-center mb-10">
     <p className="text-lg font-bold ">🎁 Today is challenge</p>
     <span className="bg-[#1F2937] text-white text-xs px-3 py-1 rounded-xl">
-      Creative
+      {challenge.category}
     </span>
   </div>
 
@@ -19,11 +19,11 @@ export const Challengecard = ({mrDone}) => {
 
     <div>
       <h2 className="font-bold text-2xl">
-        Write a quote of a philosopher
+        {challenge.title}
       </h2>
  <br />
       <p className="text-xs text-gray-600 mt-2">
-        challenge yourself to write a quote of philosopher that you remember
+        {challenge.description}
       </p>
     <br />
     <div className="flex justify-center items-center  ml-20">

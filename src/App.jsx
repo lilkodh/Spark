@@ -5,22 +5,32 @@ import { StreakTraker } from "./Components/Streaktracker";
 import { Historylist } from "./Components/Historylist";
 import { CompletionMessage } from "./Components/completionMessage";
 import { Footer } from "./Components/footer";
+import { Challenges } from "./Data/Challenges";
 
 export function App() {
   const [done, setDone] = useState(false);
   function handleDone () {
     setDone(true);
     setStreak (previousstreak => previousstreak +1)
+    
+   setIndex(previousIndex =>
+  previousIndex < Challenges.length - 1
+    ? previousIndex + 1
+    : 0
+);
+    
   }
   const [streak, setStreak] = useState(0);
+  const[index, setIndex] = useState(0);
+  
 
   return (
     <>
     <div className="bg-[#1F2937] min-h-screen p-4">
      <Header/>
      <div className="flex gap-10">
-     <Challengecard mrDone={handleDone}/>
-     <StreakTraker fstreak={streak}/>
+     <Challengecard mrDone={handleDone} challenge={Challenges[index]} />
+     <StreakTraker fstreak={streak} />
      
      </div >
       <Historylist/>

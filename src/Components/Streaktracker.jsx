@@ -7,7 +7,7 @@ export const StreakTraker = ({fstreak}) => {
 
   <p className="text-xs mt-2 ">🎉 YOU HAVE REACHED...</p>
   <h2 className="text-green-500 text-3xl font-bold mt-1 text-center ">
-    {fstreak}
+    {fstreak} DAYS IN A ROW
   </h2>
    <div>
     <br />
