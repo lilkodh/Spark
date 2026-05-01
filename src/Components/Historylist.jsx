@@ -1,4 +1,4 @@
-export const Historylist = () => {
+export const Historylist = ({ history }) => {
     return(
         <div className="bg-gray-200  rounded-2xl p-5 w-full mx-auto flex-col mb-10 ">
 
@@ -10,18 +10,18 @@ export const Historylist = () => {
   <div className="space-y-2">
 
     <div className="flex justify-between items-center border rounded-xl px-3 py-2 bg-white">
-      <p>🥇 Write down 3 things you're grateful for</p>
-      <span className="text-purple-600 text-sm">Creative</span>
+      <p>🥇 {history[0]?.title}</p>
+      <span className="text-purple-600 text-sm">{history[0]?.category}</span>
     </div>
 <br />
     <div className="flex justify-between items-center border rounded-xl px-3 py-2 bg-white">
-      <p> 🥈 Take a 10-minute walk outside</p>
-      <span className="text-green-500 text-sm">Wellness</span>
+      <p> 🥈 {history[1]?.title}</p>
+      <span className="text-green-500 text-sm">{history[1]?.category}</span>
     </div>
 <br />
     <div className="flex justify-between items-center border rounded-xl px-3 py-2 bg-white">
-      <p> 🥉 Give a genuine compliment to someone</p>
-      <span className="text-blue-500 text-sm">Social</span>
+      <p> 🥉 {history[2]?.title}</p>
+      <span className="text-blue-500 text-sm">{history[2]?.category}</span>
     </div>
 
   </div>

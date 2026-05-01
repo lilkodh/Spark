@@ -12,16 +12,18 @@ export function App() {
   function handleDone () {
     setDone(true);
     setStreak (previousstreak => previousstreak +1)
-    
+
    setIndex(previousIndex =>
   previousIndex < Challenges.length - 1
     ? previousIndex + 1
     : 0
 );
+setHistory(previousHistory => [...previousHistory, Challenges[index]])
     
   }
   const [streak, setStreak] = useState(0);
   const[index, setIndex] = useState(0);
+  const [history, setHistory] = useState([]);
   
 
   return (
@@ -33,7 +35,7 @@ export function App() {
      <StreakTraker fstreak={streak} />
      
      </div >
-      <Historylist/>
+      <Historylist history={history}/>
       <br />
       
       {done && <CompletionMessage />}
